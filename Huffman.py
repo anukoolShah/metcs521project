@@ -129,8 +129,6 @@ def __huffmanDecoding(encoded_data, huffman_tree):
     string = ''.join([str(item) for item in decoded_output])
     return string        
 
-
-
 def startHuffman():
     data = input("Enter the String to encode using Huffman Algorithm\n")
     encoding, tree = __huffmanEncoding(data)

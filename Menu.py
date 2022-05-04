@@ -38,8 +38,11 @@ while continueAnswer == 'y' or continueAnswer == 'Y':
             continueAnswer = __continuePrompt()
         case 3:
             print("****** RUN LENGTH ENCODE/DECODE AN INPUT STRING ******\n")
+            data = input("Enter the String to encode using Run Length Algorithm\n")
             x1 = RunLength()
-            x1.startRunlength()
+            encoded, decoded = x1.startRunlength(data)
+            print("\n============:: Encoded Output ::============\n", encoded)
+            print("\n============:: Decoded Output ::============\n", decoded)
             continueAnswer = __continuePrompt()
         case 4:
             break

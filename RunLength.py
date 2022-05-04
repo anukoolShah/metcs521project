@@ -1,8 +1,13 @@
+'''
+User-defined Class imported by main program
+'''
 class RunLength:
+    #usage of init method
     def __init__(self):
         #DO Nothing
-        x = 1        
+        x = 1    
         
+    #usage of private method that takes argument and returns value
     def __encode(self, sequence):
         count = 1
         result = []
@@ -33,9 +38,8 @@ class RunLength:
                 result.append(item[0] + str(item[1]))
         return "".join(result)
 
-    def startRunlength(self):
-        data = input("Enter the String to encode using Huffman Algorithm\n")
+    #usage of public method that takes self argument and 
+    def startRunlength(self, data):
         encoded = self.__encode(data)
-        print("\n============:: Encoded Output ::============\n", self.__formatOutput(encoded))
         decoded = self.__decode(encoded)
-        print("\n============:: Decoded Output ::============\n", decoded)
+        return self.__formatOutput(encoded), decoded
