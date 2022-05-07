@@ -30,19 +30,22 @@ while continueAnswer == 'y' or continueAnswer == 'Y':
     match int(menuinput):
         case 1:
             print("****** HUFFMAN ENCODE/DECODE AN INPUT STRING   ******\n")
-            huffObj =  Huffman()
-            huffObj.startHuffman()
+            data = input("Enter the String to encode using Huffman Algorithm\n")
+            huffObj =  Huffman(data)       
+            print("\n============:: Encoded Output ::============",huffObj.encode(), sep='\n')
+            print("\n============:: Decoded Output ::============",huffObj.decode(),sep='\n')
             continueAnswer = __continuePrompt()
         case 2:
             print("****** HUFFMAN ENCODE/DECODE CONTENTS OF A FILE  ******\n")
-            huffObj =  Huffman()
+            huffObj =  Huffman('')
             huffObj.fileHuffman()
             continueAnswer = __continuePrompt()
         case 3:
             print("****** RUN LENGTH ENCODE/DECODE AN INPUT STRING ******\n")
-            data = input("Enter the String to encode using Run Length Algorithm\n")
-            x1 = RunLength()
-            encoded, decoded = x1.startRunlength(data)
+            data = input("Enter the String to encode using Run-Length Algorithm\n")
+            x1 = RunLength(data)
+            encoded = x1.encode()
+            decoded = x1.decode()
             print("\n============:: Encoded Output ::============",encoded, sep='\n')
             print("\n============:: Decoded Output ::============",decoded,sep='\n')
             continueAnswer = __continuePrompt()
