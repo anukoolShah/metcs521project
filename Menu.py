@@ -1,4 +1,4 @@
-from Huffman import startHuffman, fileHuffman
+from Huffman import Huffman
 from RunLength import RunLength
 
 #USAGE OF CONTAINER TYPE - TUPLE
@@ -30,19 +30,21 @@ while continueAnswer == 'y' or continueAnswer == 'Y':
     match int(menuinput):
         case 1:
             print("****** HUFFMAN ENCODE/DECODE AN INPUT STRING   ******\n")
-            startHuffman()
+            huffObj =  Huffman()
+            huffObj.startHuffman()
             continueAnswer = __continuePrompt()
         case 2:
             print("****** HUFFMAN ENCODE/DECODE CONTENTS OF A FILE  ******\n")
-            fileHuffman()
+            huffObj =  Huffman()
+            huffObj.fileHuffman()
             continueAnswer = __continuePrompt()
         case 3:
             print("****** RUN LENGTH ENCODE/DECODE AN INPUT STRING ******\n")
             data = input("Enter the String to encode using Run Length Algorithm\n")
             x1 = RunLength()
             encoded, decoded = x1.startRunlength(data)
-            print("\n============:: Encoded Output ::============\n", encoded)
-            print("\n============:: Decoded Output ::============\n", decoded)
+            print("\n============:: Encoded Output ::============",encoded, sep='\n')
+            print("\n============:: Decoded Output ::============",decoded,sep='\n')
             continueAnswer = __continuePrompt()
         case 4:
             break
