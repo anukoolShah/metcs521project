@@ -8,7 +8,7 @@ class RunLength:
     __encodedList = []
     #usage of init method
     def __init__(self, sequence):
-        #DO Nothing
+        
         self.__sequence = sequence 
         
     #usage of private method that takes argument and returns value

@@ -1,27 +1,29 @@
 from Huffman import Huffman
 from RunLength import RunLength
 
-#USAGE OF CONTAINER TYPE - TUPLE
+#DEFINE MENU ITEMS
 mymenu = ("Press 1 to Huffman Encode an input String","Press 2 to Huffman Encode contents of a file",
           "Press 3 to Run Length Encode an input String", "Press 4 to Exit")
 
-#USAGE OF USER-DEFINED FUNCTION - PRIVATE
+#PRINT MENU ON CONSOLE
 def __printMenu():
     for i in mymenu:
         print(i)
     menuinput = input()
     return menuinput
 
-#USAGE OF USER-DEFINED FUNCTION - PRIVATE
+#PROMPT USER TO CONTINUE DOING MORE OPERATIONS
 def __continuePrompt():
     continueAnswer = input("Do you want to continue?(Y/N)")
     return continueAnswer
 
+#DEFAULT ANSWER TO YES FOR FIRST RUN
 continueAnswer = 'Y'
 
-#USAGE OF ITERATION TYPE - WHILE LOOP
+#LOOP AS LONG AS USER SAYS y OR Y
 while continueAnswer == 'y' or continueAnswer == 'Y':
     menuinput = __printMenu()
+    #LOOP TILL USER DOESNT PRESS 4
     while menuinput.isnumeric() == False or (int(menuinput) not in range(1,5)):
         print("Invalid Input")
         menuinput = __printMenu()
@@ -43,11 +45,11 @@ while continueAnswer == 'y' or continueAnswer == 'Y':
         case 3:
             print("****** RUN LENGTH ENCODE/DECODE AN INPUT STRING ******\n")
             data = input("Enter the String to encode using Run-Length Algorithm\n")
-            x1 = RunLength(data)
-            encoded = x1.encode()
-            decoded = x1.decode()
+            rlObj = RunLength(data)
+            encoded = rlObj.encode()
+            decoded = rlObj.decode()
             print("\n============:: Encoded Output ::============",encoded, sep='\n')
-            print("\n============:: Decoded Output ::============",decoded,sep='\n')
+            print("\n============:: Decoded Output ::============",decoded, sep='\n')
             continueAnswer = __continuePrompt()
         case 4:
             break
